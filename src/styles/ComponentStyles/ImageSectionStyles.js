@@ -38,7 +38,7 @@ const ImageSectionStyles = styled.div`
 
         h4 {
             font-size: 2rem;
-            color: var(--white-color);
+            color: ${({ darkMode }) => darkMode ? "var(--white-color)" : "var(--font-dark-color)"};
             
             span {
                 font-size: 2rem;

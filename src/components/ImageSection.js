@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ImageSectionStyles from '../styles/ComponentStyles/ImageSectionStyles'
 import resumeImg from "../images/Me.jpg";
 import PrimaryButton from './PrimaryButton';
+import { DarkModeContext } from '../DarkModeContext';
 
 function ImageSection() {
+  const { darkMode } = useContext(DarkModeContext)
+
   return (
-    <ImageSectionStyles>
+    <ImageSectionStyles darkMode={darkMode}>
       <div className="left-content">
         <img src={resumeImg} alt="Mon profil" />
       </div>

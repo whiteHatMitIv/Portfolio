@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 const ServiceCardStyles = styled.div`
-    background-color: var(--background-dark-grey);
+    background-color: ${({ darkMode }) => darkMode ? "var(--background-dark-grey)" : "var(--background-light-grey)"};
     border-bottom: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
     border-top: 8px solid var(--border-color);
@@ -24,6 +24,7 @@ const ServiceCardStyles = styled.div`
         min-height: 160px;
         padding: 0.9rem;
         text-align: justify;
+        position: relative;
 
         h4 {
             color: var(--white-color);

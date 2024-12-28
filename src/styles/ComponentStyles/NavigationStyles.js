@@ -7,17 +7,18 @@ const NavigationStyled = styled.nav`
     align-items: center;
     height: 100%;
     width: 100%;
-    border-right: 1px solid var(--border-color);
+    border-right: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--border-color-light)"};
 
     .avatar {
         width: 100%;
-        border-bottom: 1px solid var(--border-color);
+        border-bottom: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--border-color-light)"};
         text-align: center;
         padding: 1rem 0;
         img{
             width: 70%;
             border-radius: 50%;
-            border: 8px solid var(--border-color);
+            transition: all 0.4s ease-in-out;
+            border: ${({ darkMode }) => darkMode ? "8px solid var(--border-color)" : "8px solid var(--border-color-light)"};
         }
     }
 
@@ -27,6 +28,7 @@ const NavigationStyled = styled.nav`
 
         .active-class {
             background-color: var(--primary-color);
+            color: white;
         }
 
         li {
@@ -67,7 +69,7 @@ const NavigationStyled = styled.nav`
     }
 
     footer {
-        border-top: 1px solid var(--border-color);
+        border-top: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--border-color-light)"};
         width: 100%;
         p {
             padding: 1.2rem 0;

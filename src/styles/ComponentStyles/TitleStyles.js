@@ -3,7 +3,7 @@ import styled from "styled-components";
 const TitleStyles = styled.div`
     position: relative;
     h2 {
-        color: var(--white-color);
+        color: ${({ darkMode }) => darkMode ? "var(--white-color)" : "var(--font-dark-color)"};
         font-size: 2.5rem;
         font-weight: 600;
         text-transform: uppercase;
@@ -35,7 +35,7 @@ const TitleStyles = styled.div`
 
         span {
             font-weight: 700;
-            color: rgba(25, 29, 43, 0.44);
+            color: ${({ darkMode }) => darkMode ? "rgba(25, 29, 43, 0.44)" : "rgba(222, 222, 222, 0.47)"};
             font-size: 3.6rem;
             position: absolute;
             left: 0;

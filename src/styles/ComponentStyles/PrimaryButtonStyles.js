@@ -11,7 +11,7 @@ const PrimaryButtonStyles = styled.button`
     position: relative;
     border-radius: 0.5rem;
     overflow: hidden;
-    border-color: var(--border-color);
+    border-color: var(--font-light-color);
     border-width: 1px;
 
     &:hover {

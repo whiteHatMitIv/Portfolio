@@ -3,7 +3,7 @@ import { useEffect, useMemo, useState } from "react";
 import { loadSlim } from "@tsparticles/slim"; 
 
 
-const ParticlesComponent = (props) => {
+const ParticlesComponent = ({id, color = "#FFF"}) => {
 
   const [init, setInit] = useState(false);
   useEffect(() => {
@@ -51,7 +51,7 @@ const ParticlesComponent = (props) => {
       },
       particles: {
         color: {
-          value: "#FFF",
+          value: color,
         },
         move: {
           direction: "none",
@@ -91,11 +91,11 @@ const ParticlesComponent = (props) => {
         },
       },
     }),
-    [],
+    [color],
   );
 
 
-  return <Particles id={props.id} init={particlesLoaded} options={options} />; 
+  return <Particles id={id} init={particlesLoaded} options={options} />; 
 };
 
 export default ParticlesComponent;

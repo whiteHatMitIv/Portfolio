@@ -1,11 +1,15 @@
-import React from 'react'
+import React, {useContext} from 'react'
 import SidebarStyled from '../styles/ComponentStyles/SidebarStyles'
 import Navigation from './Navigation'
+import { DarkModeContext } from '../DarkModeContext'
+
 
 
 function Sidebar() {
+  const { darkMode } = useContext(DarkModeContext)
+  
   return (
-    <SidebarStyled>
+    <SidebarStyled darkMode={darkMode}>
         <Navigation/>
     </SidebarStyled>
   )

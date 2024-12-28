@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import NavigationStyled from '../styles/ComponentStyles/NavigationStyles'
 import { NavLink } from 'react-router-dom'
 import avatar from '../images/Me2.jpg'
+import { DarkModeContext } from '../DarkModeContext'
 
 function Navigation() {
+  const { darkMode } = useContext(DarkModeContext)
+
   return (
-    <NavigationStyled>
+    <NavigationStyled darkMode={darkMode}>
         <div className="avatar">
             <img src={avatar} alt="Me"/>
         </div>
