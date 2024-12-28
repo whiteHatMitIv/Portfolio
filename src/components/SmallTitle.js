@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { DarkModeContext } from '../DarkModeContext'
 
 function SmallTitle({icon, title}) {
+  const { darkMode } = useContext(DarkModeContext)
+
   return (
-    <SmallTitleStyles>
+    <SmallTitleStyles darkMode={darkMode}>
         <p>{icon}</p>
         <h3>{title}</h3>
     </SmallTitleStyles>
@@ -23,7 +26,7 @@ const SmallTitleStyles = styled.div`
     }
 
     h3 {
-        color: var(--white-color);
+        color: ${({ darkMode }) => darkMode ? "var(--white-color)" : "var(--font-dark-color)"};
         font-size: 1.6rem;
     }
 `

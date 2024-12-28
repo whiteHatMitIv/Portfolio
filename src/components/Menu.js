@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import GithubIcon from '@mui/icons-material/GitHub'
+import { DarkModeContext } from '../DarkModeContext'
 
 
 function Menu({menuItem}) {  
+    const { darkMode } = useContext(DarkModeContext)
+
     return (
-        <MenuItemStyles>
+        <MenuItemStyles darkMode={darkMode}>
             {
                 menuItem.map((item) => {
                     return <div className="grid-item" key={item.id}>
@@ -20,8 +23,10 @@ function Menu({menuItem}) {
                                     </li>          
                                 </ul>
                             </div>
-                            <h6>{item.title}</h6>
-                            <p>{item.text}</p>
+                            <div className="desc">
+                                <h6>{item.title}</h6>
+                                <p>{item.text}</p>
+                            </div>
                         </div>
                     </div>
                 })
@@ -37,17 +42,39 @@ const MenuItemStyles = styled.div`
 
     .grid-item {
         .portfolio-content {
-            display: block;
+            display: flex;
+            flex-direction: column;
             position: relative;
+            border-bottom: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
+            border-left: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
+            border-top: ${({ darkMode }) => darkMode ? "8px solid var(--border-color)" : "8px solid var(--font-light-color)"};
+            border-right: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
+            height: 60vh;
+            border-radius: 8px;
+            transition: all 0.4s ease-in-out;
 
-            h6 {
-                font-size: 1.2rem;
+            &:hover {
+                border-top: 8px solid var(--primary-color);
+                transform: translateY(3px);
+            }
+
+            .desc {
+                padding: 1rem 1rem;
+                h6 {
+                    font-size: 1.1rem;
+                    text-align: center;
+                }
+
+                p {
+                    text-align: justify;
+                }
             }
 
             img {
                 width: 100%;
                 height: 35vh;
                 object-fit: cover;
+                border-bottom: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
             }
 
             ul {
@@ -61,7 +88,7 @@ const MenuItemStyles = styled.div`
 
                 li {
                     display: flex;
-                    background-color: var(--border-color);
+                    background-color: ${({ darkMode }) => darkMode ? "var(--border-color)" : "var(--font-light-color)"};
                     align-items: center;
                     justify-content: center;
                     padding: .6rem;

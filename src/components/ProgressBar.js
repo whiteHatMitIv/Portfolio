@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { DarkModeContext } from '../DarkModeContext';
 
 function ProgressBar({title, width, text}) {
+  const { darkMode } = useContext(DarkModeContext)
+
   return (
-    <ProgressBarStyles>
+    <ProgressBarStyles darkMode={darkMode}>
         <h6>{title}</h6>
         <div className="progress-bar">
             <p>{text}</p>
@@ -28,7 +31,7 @@ const ProgressBarStyles = styled.div`
             position: relative;
             width: 100%;
             height: .3rem;
-            background-color: var(--border-color);
+            background-color: ${({ darkMode }) => darkMode ? "var(--border-color)" : "var(--font-light-color)"};
             border-radius: 15px;
 
             span {

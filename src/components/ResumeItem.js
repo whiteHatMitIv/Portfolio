@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
+import { DarkModeContext } from '../DarkModeContext';
 
 function ResumeItem({year, title, sub_title, text}) {
+  const { darkMode } = useContext(DarkModeContext)
+
   return (
-    <ResumeItemStyles>
+    <ResumeItemStyles darkMode={darkMode}>
         <div className="left-content">
             <p>{year}</p>
         </div>
@@ -36,8 +39,8 @@ const ResumeItemStyles = styled.div`
             height: 15px;
             width: 15px;
             border-radius: 50%;
-            border: 2px solid var(--border-color);
-            background-color: var(--background-dark-color);
+            border: ${({ darkMode }) => darkMode ? "2px solid var(--border-color)" : "2px solid var(--font-light-color)"};
+            background-color: ${({ darkMode }) => darkMode ? "var(--background-dark-color)" : "var(--background-light-color)"};
         }
 
         p {
@@ -58,7 +61,7 @@ const ResumeItemStyles = styled.div`
             top: 15px;
             height: 2px;
             width: 3rem;
-            background-color: var(--border-color);
+            background-color: ${({ darkMode }) => darkMode ? "var(--border-color)" : "var(--font-light-color)"};
         }
 
         h5 {

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import styled from 'styled-components'
 import { InnerLayout, MainLayout } from '../styles/Layout';
 import Title from './Title';
@@ -6,14 +6,16 @@ import SmallTitle from './SmallTitle';
 import BusinessCenterIcon from '@mui/icons-material/BusinessCenter';
 import SchoolIcon from '@mui/icons-material/School';
 import ResumeItem from './ResumeItem';
+import { DarkModeContext } from '../DarkModeContext';
 
 function Resume() {
     const briefIcon = <BusinessCenterIcon/>
     const schoolIcon = <SchoolIcon/>
+    const { darkMode } = useContext(DarkModeContext)
 
     return (
         <MainLayout>
-            <ResumeStyles>
+            <ResumeStyles darkMode={darkMode}>
                 <Title title={'Resume'} span={'Resume'}/>
                 <InnerLayout>
                     <div className="small-title">
@@ -71,7 +73,7 @@ const ResumeStyles = styled.section`
 
     .resume-content {
         margin-left: .25rem;
-        border-left: 2px solid var(--border-color);
+        border-left: ${({ darkMode }) => darkMode ? "2px solid var(--border-color)" : "2px solid var(--font-light-color)"};
     }
 `;
 

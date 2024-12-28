@@ -28,6 +28,7 @@ const portfolios = [
         title: 'Portfolio',
         text: "Implémentation de ce portfolio en react"
     }
+    
 ]
 
 export default portfolios

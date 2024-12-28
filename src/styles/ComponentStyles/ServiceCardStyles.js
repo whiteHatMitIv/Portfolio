@@ -2,10 +2,10 @@ import styled from "styled-components";
 
 const ServiceCardStyles = styled.div`
     background-color: ${({ darkMode }) => darkMode ? "var(--background-dark-grey)" : "var(--background-light-grey)"};
-    border-bottom: 1px solid var(--border-color);
-    border-left: 1px solid var(--border-color);
-    border-top: 8px solid var(--border-color);
-    border-right: 1px solid var(--border-color);
+    border-bottom: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
+    border-left: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
+    border-top: ${({ darkMode }) => darkMode ? "8px solid var(--border-color)" : "8px solid var(--font-light-color)"};
+    border-right: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
     border-radius: 8px;
     transition: all 0.4s ease-in-out;
     overflow: hidden;
@@ -27,7 +27,7 @@ const ServiceCardStyles = styled.div`
         position: relative;
 
         h4 {
-            color: var(--white-color);
+            color: ${({ darkMode }) => darkMode ? "var(--white-color)" : "var(--dark-color)"};
             font-size: 1rem;
             text-align: center;
             padding: 1.7vh 0;
@@ -37,7 +37,7 @@ const ServiceCardStyles = styled.div`
             &::after {
                 content: "";
                 width: 4rem;
-                background-color: var(--border-color);
+                background-color: ${({ darkMode }) => darkMode ? "var(--border-color)" : "var(--font-light-color)"};
                 height: 3px;
                 position: absolute;
                 left: 50%;
