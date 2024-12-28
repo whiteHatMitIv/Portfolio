@@ -12,7 +12,7 @@ const ContactPageStyles = styled.section`
         }
 
         .contact-title {
-            color: var(--white-color);
+            color: ${({ darkMode }) => darkMode ? "var(--white-color)" : "var(--font-dark-color)"};
             margin-bottom: 2.4rem;
 
             h4 {
@@ -31,12 +31,12 @@ const ContactPageStyles = styled.section`
                     left: 20px;
                     top: -12px;
                     display: inline-block;
-                    background-color: var(--background-dark-color);
+                    background-color: ${({ darkMode }) => darkMode ? "var(--background-dark-color)" : "var(--background-light-color)"};
                     color: inherit;
                 }
 
                 input {
-                    border: 1px solid var(--border-color);
+                    border: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
                     outline: none;
                     background: transparent;
                     height: 8vh;
@@ -49,7 +49,8 @@ const ContactPageStyles = styled.section`
 
                 textarea {
                     background-color: transparent;
-                    border: 1px solid var(--border-color);
+                    border-radius: 7px;
+                    border: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
                     width: 100%;
                     outline: none;
                     color: inherit;

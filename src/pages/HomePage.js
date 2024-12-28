@@ -16,7 +16,7 @@ function HomePage() {
             <ParticlesComponent id="particles" color={darkMode ? "#FFF" : "#a4acc4"}/>
         </div>
         <div className="typography">
-          <h1>Hi I'm <span>Ivan NTEUMI</span></h1>
+          <h1>Salut je suis <span>Ivan NTEUMI</span></h1>
           <p>
             Etudiant en filière genie logiciel à l'IUT de Douala.
             Je suis un développeur passionné notamment dans le domaine

@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { InnerLayout, MainLayout } from '../styles/Layout'
 import Title from "../components/Title";
 import ContactPageStyles from '../styles/PagesStyles/ContactPageStyles';
@@ -7,16 +7,19 @@ import PhoneIcon from '@mui/icons-material/Phone'
 import MailOutlineOutlinedIcon from '@mui/icons-material/MailOutlineOutlined';
 import PlaceOutlinedIcon from '@mui/icons-material/PlaceOutlined';
 import ContactItem from '../components/ContactItem';
+import { DarkModeContext } from '../DarkModeContext';
 
 
 function ContactPage() {
   const phone = <PhoneIcon />
   const email = <MailOutlineOutlinedIcon />
   const adress = <PlaceOutlinedIcon />
+  const { darkMode } = useContext(DarkModeContext)
+
   return (
     <MainLayout>
       <Title title={'Contact'} span={'Contact'}/>
-      <ContactPageStyles>
+      <ContactPageStyles darkMode={darkMode}>
         <InnerLayout className={'contact-section'}>
           <div className="left-content">
             <div className="contact-title">

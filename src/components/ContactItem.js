@@ -1,9 +1,12 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import ContactItemStyles from '../styles/ComponentStyles/ContactItemStyles';
+import { DarkModeContext } from '../DarkModeContext';
 
 function ContactItem({icon, title, contact1, contact2}) {
+  const { darkMode } = useContext(DarkModeContext)
+
   return (
-    <ContactItemStyles>
+    <ContactItemStyles darkMode={darkMode}>
         <div className="left-content">
             <p>{icon}</p>
         </div>

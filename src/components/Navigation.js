@@ -14,10 +14,10 @@ function Navigation() {
         </div>
         <ul className="nav-items">
             <li className="navitem">
-                <NavLink to="/" className={({ isActive }) => (isActive ? 'active-class' : '')}>Home</NavLink>
+                <NavLink to="/" className={({ isActive }) => (isActive ? 'active-class' : '')}>Accueil</NavLink>
             </li>
             <li className="navitem">
-                <NavLink to="/about" className={({ isActive }) => (isActive ? 'active-class' : '')}>About</NavLink>
+                <NavLink to="/about" className={({ isActive }) => (isActive ? 'active-class' : '')}>A propos</NavLink>
             </li>
             <li className="navitem">
                 <NavLink to="/resume" className={({ isActive }) => (isActive ? 'active-class' : '')}>Resume</NavLink>

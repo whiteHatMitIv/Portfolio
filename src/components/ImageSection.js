@@ -35,7 +35,7 @@ function ImageSection() {
             <p>: Douala-Yassa, Cameroun</p>
           </div>
         </div>
-        <PrimaryButton title={"Download CV"} />
+        <PrimaryButton title={"Telecharger le CV"} />
       </div>
     </ImageSectionStyles>
   )

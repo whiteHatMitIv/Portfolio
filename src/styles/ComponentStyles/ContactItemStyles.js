@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 const ContactItemStyles = styled.div`
     padding: 1.5rem 2rem;
-    background-color: var(--background-dark-grey);
+    background-color: ${({ darkMode }) => darkMode ? "var(--background-dark-grey)" : "var(--background-light-grey)"};
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -16,7 +16,7 @@ const ContactItemStyles = styled.div`
     }
 
     .left-content {
-        border: 1px solid var(--border-color);
+        border: ${({ darkMode }) => darkMode ? "1px solid var(--border-color)" : "1px solid var(--font-light-color)"};
         padding: 0.7rem;
         /* display: flex;
         align-items: center;
@@ -29,7 +29,7 @@ const ContactItemStyles = styled.div`
 
     .right-content {
         h6 {
-            color: var(--white-color);
+            color: ${({ darkMode }) => darkMode ? "var(--white-color)" : "var(--dark-color)"};
             font-size: 1rem;
             padding-bottom: 0.4rem;
         }
